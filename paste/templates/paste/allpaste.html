@@ -1,0 +1,106 @@
+
+
+  <!doctype html>
+  <html lang="en">
+    <head>
+      {% load staticfiles %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+      <meta name="generator" content="Jekyll v3.8.5">
+      <title>My Pastebin</title>
+
+      <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+      <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+      <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+        .i {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+        h5,h1,h3{
+              font-family: 'Great Vibes', cursive;
+              font-style: oblique;
+
+          }
+          h3{
+                display: inline;
+
+            }
+
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+
+    </head>
+    <body>
+      <header><nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{%url 'home'%}"><img src = "{% static 'logo.png' %}"  height="40" width="40" class="d-inline-block align-top" /><h3 > My Pastebin</h3> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+
+        <<a href="{% url 'home'%}">    <button type="submit" class="btn btn-success">Create</button></a>
+
+
+      </ul>
+    </div>
+  </nav>
+  </header>
+</br>
+
+
+
+
+
+
+{% for paste in allpaste.all %}
+<div class="card col-md-6" >
+
+<div class="card-body">
+<h5 class="card-title col-md-8">{{paste.name}}</h5><a href="{% url 'detail' paste.id %}" class="btn btn-success">Detail</a>
+<a href="{% url 'pastedelete' paste.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'edit' paste.id %}" class="btn btn-secondary">edit</a>
+</div>
+</div>
+</br>
+{%endfor%}
+
+
+
+<div class="fixed-bottom ">
+
+
+
+  <footer class="text-muted" >
+    <div class="container text-center">
+      <P>&copy; Harshit Kalal {% now "Y" %}</p>
+    </div>
+  </footer>
+</div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script></html>

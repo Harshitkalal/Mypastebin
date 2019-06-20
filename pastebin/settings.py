@@ -25,7 +25,7 @@ SECRET_KEY = 'n(_eryvlv_)l8x$q_32bbeb^=mrtj2dikh_k97+dc)1#bd3o1b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mypastebin.herokuapp.com']
 
 
 # Application definition
@@ -119,12 +119,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATICFILES_DIRS = [
-os.path.join(BASE_DIR,'pastebin/static')
+##In orderto run app locally for heroku we added whienoise
+#STATICFILES_DIRS = [
+#os.path.join(BASE_DIR,'pastebin/static')
 
-]
+#]
 
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
 

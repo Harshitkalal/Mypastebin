@@ -1,1 +1,1 @@
-web: gunicorn mypastebin.wsgi --log-file -
+web: gunicorn pastebin.wsgi --log-file -

@@ -49,7 +49,7 @@ Just go into the code directory and type
 ```
 python manage.py runserver
 ```
-"My music" app will start on 127.0.0.1:8000 (Local Address).
+"My Paste" app will start on 127.0.0.1:8000 (Local Address).
  
 ### Applying Migrations on the Project 
 Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema. They’re designed to be mostly automatic, but you’ll need to know when to make migrations, when to run them, and the common problems you might run into.
